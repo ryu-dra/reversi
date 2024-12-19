@@ -24,6 +24,9 @@ public class Board {
 		board[4][4] = B;
 	}
 	
+	public String[][] getBoard(){
+		return this.board;
+	}
 	
 	public void show_board() {
 		System.out.print("  ");

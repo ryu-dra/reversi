@@ -5,7 +5,7 @@ import java.util.Random;
 public class NPC_random_Player extends Player{
 	
 	public NPC_random_Player(String color) {
-		super(color);
+		super(color,()->{return null;});
 	}
 	
 	@Override
@@ -22,4 +22,5 @@ public class NPC_random_Player extends Player{
 		}
 		
 	}
+	
 }

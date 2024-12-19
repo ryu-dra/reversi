@@ -7,7 +7,9 @@
 
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
+    id 'eclipse'
     id 'application'
+    id "org.openjfx.javafxplugin" version "0.1.0"
 }
 
 repositories {
@@ -23,6 +25,11 @@ dependencies {
 
     // This dependency is used by the application.
     implementation libs.guava
+    
+    implementation 'org.openjfx:javafx-base:23'
+    implementation 'org.openjfx:javafx-graphics:23'
+    implementation 'org.openjfx:javafx-fxml:23'
+    implementation 'org.openjfx:javafx-controls:23'
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
@@ -34,7 +41,7 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = 'org.example.Main'
+    mainClass = 'org.example.App'
     
     applicationDefaultJvmArgs = ["-Dsun.stdout.encoding=UTF-8", "-Dsun.stderr.encoding=UTF-8"]
 }
@@ -44,7 +51,9 @@ tasks.named('test') {
     useJUnitPlatform()
 }
 
-
+javafx{
+    modules = ['javafx.base','javafx.controls','javafx.graphics','javafx.fxml'] // 使用するJavaFXモジュール
+}
 
 
 
